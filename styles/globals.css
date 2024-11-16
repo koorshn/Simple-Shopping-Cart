@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+
+@layer {
+  /*modal*/
+  @keyframes modal {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  .modal {
+    position: fixed;
+    bottom: 0;
+    transform: translateY(-100%);
+    background-color: white;
+    animation: modal 0.3s forwards;
+    height: 75vh;
+  }
+  @keyframes modal-container {
+    from {
+      background-color: rgb(0, 0, 0, 0);
+    }
+    to {
+      background-color: rgb(0, 0, 0, 0.7);
+    }
+  }
+  .modal-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: black;
+    animation: modal-container 0.3s forwards;
+  }
+}
